@@ -1,7 +1,11 @@
 import Person from "./Person";
 
 const Main = () => {
-  return <Person />;
+  return (
+    <main>
+      <Person />
+    </main>
+  );
 };
 
 export default Main;

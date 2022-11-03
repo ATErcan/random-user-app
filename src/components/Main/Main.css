@@ -1,5 +1,42 @@
-.icon {
+main {
+  padding: 0 1.5rem;
+}
+main .person {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  row-gap: 2rem;
+  align-items: center;
+  border: 2px solid orange;
+  width: max-content;
+  margin: 2rem auto;
+}
+main .person .person-img {
+  border-radius: 50%;
+  box-shadow: 3px 3px 10px 5px rgba(0, 0, 0, 0.8);
+  outline: 4px solid rgba(255, 255, 255, 0.8);
+}
+main .person .icon-container {
+  display: grid;
+  grid-template-columns: repeat(3, 40px);
+  grid-template-rows: 40px 40px;
+  gap: 2rem;
+}
+main .person .icon-container .icon {
   border-radius: 50%;
   box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.8);
-  padding: 0.2rem;
+  padding: 0.3rem;
+  width: 100%;
+}
+main .person .btn-container {
+  display: flex;
+  column-gap: 1rem;
+}
+main .person .btn-container .btn {
+  background-color: #61b3d4;
+  border: none;
+  color: #fff;
+  padding: 0.4rem 0.6rem;
+  border-radius: 20px;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
 }

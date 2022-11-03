@@ -23,6 +23,13 @@ const Person = () => {
     axios(url).then((data) => setRandomUser(data.data.results));
   }, [newUser]);
 
+  useEffect(() => {
+    /*     setInfo({
+      title: "My name is",
+      detail: `${randomUser[0]?.name.first} ${randomUser[0]?.name.last}`,
+    }); */
+  }, []);
+
   const getNewUser = () => {
     setNewUser((prevUser) => !prevUser);
   };
@@ -30,46 +37,56 @@ const Person = () => {
   const showInfo = (e) => {
     if (e.target.id === "gender") {
       setInfo((prevInfo) => ({
-        title: "name",
+        title: "My name is",
         detail: `${randomUser[0].name.first} ${randomUser[0].name.last}`,
       }));
     } else if (e.target.id === "mail") {
       setInfo((prevInfo) => ({
-        title: "email",
+        title: "My email is",
         detail: randomUser[0].email,
       }));
     } else if (e.target.id === "age") {
       setInfo((prevInfo) => ({
-        title: "age",
+        title: "My age is",
         detail: randomUser[0].dob.age,
       }));
     } else if (e.target.id === "address") {
       setInfo((prevInfo) => ({
-        title: "address",
+        title: "My address is",
         detail: `${randomUser[0].location.street.number} ${randomUser[0].location.street.name} ${randomUser[0].location.country}`,
       }));
     } else if (e.target.id === "phone") {
       setInfo((prevInfo) => ({
-        title: "phone",
+        title: "My phone is",
         detail: randomUser[0].phone,
+      }));
+    } else {
+      setInfo((prevInfo) => ({
+        title: "My password is",
+        detail: randomUser[0].login.password,
       }));
     }
   };
 
-  console.log(randomUser[0]);
-
   return (
     <div className="person">
-      <img src={randomUser[0]?.picture.large} alt="person" />
+      <img
+        src={randomUser[0]?.picture.large}
+        alt="person"
+        className="person-img"
+      />
       <div className="person-info">
-        <p className="my-info">My {info.title} is</p>
-        <h3 className="info">{info.detail}</h3>
+        <p className="my-info">{!info.title ? "My name is" : info.title}</p>
+        <h3 className="info">
+          {!info.title
+            ? `${randomUser[0]?.name.first} ${randomUser[0]?.name.last}`
+            : info.detail}
+        </h3>
       </div>
       <div className="icon-container">
         <img
-          src={woman}
+          src={randomUser[0]?.gender === "male" ? man : woman}
           alt="gender"
-          width="50px"
           className="icon"
           onMouseOver={showInfo}
           id="gender"
@@ -77,15 +94,13 @@ const Person = () => {
         <img
           src={mail}
           alt="email"
-          width="50px"
           className="icon"
           onMouseOver={showInfo}
           id="mail"
         />
         <img
-          src={guw}
+          src={randomUser[0]?.gender === "male" ? gum : guw}
           alt="age"
-          width="50px"
           className="icon"
           onMouseOver={showInfo}
           id="age"
@@ -93,7 +108,6 @@ const Person = () => {
         <img
           src={map}
           alt="address"
-          width="50px"
           className="icon"
           onMouseOver={showInfo}
           id="address"
@@ -101,7 +115,6 @@ const Person = () => {
         <img
           src={phone}
           alt="phone"
-          width="50px"
           className="icon"
           onMouseOver={showInfo}
           id="phone"
@@ -109,15 +122,17 @@ const Person = () => {
         <img
           src={padlock}
           alt="password"
-          width="50px"
           className="icon"
           onMouseOver={showInfo}
           id="password"
         />
       </div>
-      <button className="new-user btn" onClick={getNewUser}>
-        New User
-      </button>
+      <div className="btn-container">
+        <button className="new-user btn" onClick={getNewUser}>
+          NEW USER
+        </button>
+        <button className="add-user btn">ADD USER</button>
+      </div>
     </div>
   );
 };
