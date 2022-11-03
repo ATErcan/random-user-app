@@ -153,7 +153,7 @@ const Person = () => {
           </button>
         </div>
       </div>
-      <AddedUser />
+      {userList.length > 0 && <AddedUser userList={userList} />}
     </>
   );
 };

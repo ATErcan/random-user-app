@@ -60,10 +60,17 @@ main .user-list {
   row-gap: 0.6rem;
   max-width: 230px;
   margin: auto;
+  line-height: 1.7rem;
+  line-break: anywhere;
+  text-align: center;
 }
 main .user-list .user-title {
   background-color: #61b3d4;
   color: #fff;
   padding: 0.3rem 0;
   text-indent: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+main .user-list .user-item {
+  border-bottom: 1px solid #000;
 }
