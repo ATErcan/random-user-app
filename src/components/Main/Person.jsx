@@ -32,6 +32,10 @@ const Person = () => {
 
   const getNewUser = () => {
     setNewUser((prevUser) => !prevUser);
+    setInfo((prevInfo) => ({
+      title: "",
+      detail: "",
+    }));
   };
 
   const showInfo = (e) => {
