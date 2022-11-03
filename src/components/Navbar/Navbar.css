@@ -5,4 +5,5 @@ nav {
   row-gap: 0.5rem;
   padding: 1rem 0 0.5rem;
   text-align: center;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
 }

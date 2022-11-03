@@ -7,9 +7,12 @@ main .person {
   padding: 1.2rem;
   row-gap: 2rem;
   align-items: center;
-  border: 2px solid orange;
   width: max-content;
   margin: 2rem auto;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  border-radius: 30px;
 }
 main .person .person-img {
   border-radius: 50%;
@@ -50,4 +53,17 @@ main .person .btn-container .btn {
   padding: 0.4rem 0.6rem;
   border-radius: 20px;
   box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+}
+main .user-list {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.6rem;
+  max-width: 230px;
+  margin: auto;
+}
+main .user-list .user-title {
+  background-color: #61b3d4;
+  color: #fff;
+  padding: 0.3rem 0;
+  text-indent: 0.5rem;
 }
