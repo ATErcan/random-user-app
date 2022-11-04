@@ -1,5 +1,5 @@
 main {
-  padding: 0 1rem;
+  padding: 1rem 0 8rem;
 }
 main .person {
   display: flex;
@@ -27,8 +27,9 @@ main .person .person-info .my-info {
 }
 main .person .person-info .info {
   font-size: 1rem;
-  max-width: 200px;
+  max-width: 12.5rem;
   line-break: anywhere;
+  margin: auto;
 }
 main .person .icon-container {
   display: grid;
@@ -41,6 +42,10 @@ main .person .icon-container .icon {
   box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.8);
   padding: 0.3rem;
   width: 100%;
+  cursor: pointer;
+}
+main .person .icon-container .icon:hover {
+  opacity: 0.6;
 }
 main .person .btn-container {
   display: flex;
@@ -53,12 +58,17 @@ main .person .btn-container .btn {
   padding: 0.4rem 0.6rem;
   border-radius: 20px;
   box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  user-select: none;
+}
+main .person .btn-container .btn:hover {
+  opacity: 0.8;
 }
 main .user-list {
   display: flex;
   flex-direction: column;
   row-gap: 0.6rem;
-  max-width: 230px;
+  max-width: 14.3rem;
   margin: auto;
   line-height: 1.7rem;
   line-break: anywhere;
@@ -67,10 +77,62 @@ main .user-list {
 main .user-list .user-title {
   background-color: #61b3d4;
   color: #fff;
-  padding: 0.3rem 0;
+  padding: 0.4rem 0;
   text-indent: 0.5rem;
   margin-bottom: 0.5rem;
+  font-size: 1.2rem;
 }
 main .user-list .user-item {
   border-bottom: 1px solid #000;
+}
+main .user-list .user-item:hover {
+  opacity: 0.7;
+}
+
+@media screen and (min-width: 576px) {
+  main .person {
+    width: auto;
+    margin: 3rem auto;
+    padding: 3rem 2rem;
+    max-width: 35rem;
+  }
+  main .person .person-info .info {
+    font-size: 1rem;
+    max-width: max-content;
+  }
+  main .person .person-info .my-info {
+    font-size: 1.3rem;
+  }
+  main .person .person-info .info {
+    font-size: 1.5rem;
+  }
+  main .person .icon-container {
+    grid-template-columns: repeat(6, 40px);
+    grid-template-rows: 40px;
+  }
+  main .person .btn-container {
+    column-gap: 3rem;
+  }
+  main .person .btn-container .btn {
+    padding: 0.7rem 1.2rem;
+  }
+  main .user-list {
+    display: grid;
+    grid-template-columns: 45% 45%;
+    grid-template-rows: auto;
+    gap: 2rem 0.5rem;
+    justify-content: center;
+    max-width: unset;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  main {
+    padding: 1rem 0 6rem;
+  }
+  main .user-list {
+    grid-template-columns: 30% 32% 20% 7%;
+    gap: 0.3rem;
+    max-width: 88rem;
+  }
 }
